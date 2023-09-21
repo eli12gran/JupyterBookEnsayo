@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebooks with MyST Markdown &#8212; My sample book</title>
+    <title>Péndulo con y sin fricción &#8212; My sample book</title>
   
   
   
@@ -62,11 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Pendulum';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Here’s my sample title" href="mymarkdownfile.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Here’s my sample title" href="mymarkdownfile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,9 +170,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mymarkdownfile.html">Here’s my sample title</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Pendulum.html"><strong>Péndulo con y sin fricción</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Péndulo con y sin fricción</strong></a></li>
 </ul>
 
     </div>
@@ -243,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown-notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPendulum.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/markdown-notebooks.md" target="_blank"
+      <li><a href="_sources/Pendulum.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -283,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -355,7 +356,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notebooks with MyST Markdown</h1>
+    <h1>Péndulo con y sin fricción</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,9 +366,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-con-euler"><strong>Péndulo Simple con Euler</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-con-euler-cromer"><strong>Péndulo Simple con Euler-Cromer</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -379,49 +379,122 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this heading">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this heading">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pendulo-con-y-sin-friccion">
+<h1><strong>Péndulo con y sin fricción</strong><a class="headerlink" href="#pendulo-con-y-sin-friccion" title="Permalink to this heading">#</a></h1>
+<p>En un péndulo simple tenemos que se presenta un movimiento periódico, es decir, un movimiento que va y vuelve. Si dibujáramos el diagrama de fuerzas del movimiento, tendríamos algo así:</p>
+<p><img alt="" src="https://i.imgur.com/vmSwfVb.png" /></p>
+<p>Cuando hablamos de péndulo simple nos referimos a que el ángulo <span class="math notranslate nohighlight">\(\theta\)</span> no es mayor nunca al <span class="math notranslate nohighlight">\(sen(15°)\)</span> por lo que esto implica que <span class="math notranslate nohighlight">\(sen(\theta) ≈ \theta\)</span> entonces no tenemos un movimiento caótico, como veremos un caso más adelante. Si escribiéramos las ecuaciones de Newton para este movimiento tendríamos:</p>
+<div class="math notranslate nohighlight">
+\[\sum F_{x} = -Tsen(\theta) = m \frac {d^2x}{dt^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\sum F_{y} = Tcos(\theta) - mg = m \frac {d^2y}{dt^2}\]</div>
+<p>Como vemos acá, tenemos dos ecuaciones para resolver un sistema con tres incógnitas. Este sistema se hace muy poco efectivo y complejo de resolver, por lo que la solución más sencilla es <strong>trasladar el sistema a coordenadas polares</strong>. Para mirar bien cómo quedaría descrito el movimiento en las coordenadas polares observemos la siguiente imagen:</p>
+<p><img alt="" src="https://i.imgur.com/qy229yU.png" /></p>
+<p>Si escribiéramos las ecuaciones de Newton de este “nuevo sistema”, tendríamos:</p>
+<div class="math notranslate nohighlight">
+\[\sum F_{r} = T - mgcos(\theta) = m\frac {d^2 r}{dt^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\sum F_{\theta} = -mg sen(\theta) = m \frac {dv_{\theta}}{dt}\]</div>
+<p>Si observamos la imagen podemos ver que <span class="math notranslate nohighlight">\(r\)</span> es la longitud de la cuerda, por lo que su derivada es una constante entonces es <span class="math notranslate nohighlight">\(0\)</span>. Además la ecuación de la sumatoria de fuerzas en <span class="math notranslate nohighlight">\(\theta\)</span> podemos descrbirla de una forma diferente ya que la velocidad en este movimiento estaría dada por: <span class="math notranslate nohighlight">\(r \frac {d\theta}{dt}\)</span>
+entonces las ecuaciones quedan descritas de la siguiente forma:</p>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[ T-mgcos(\theta) = 0\]</div>
+<div class="math notranslate nohighlight">
+\[T = mgcos(\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac {d^2\theta}{dt^2} = \frac {-g}{l} sen(\theta)\]</div>
+<hr class="docutils" />
+<p>Y estas serían las ecuaciones que debemos resolver numéricamente.</p>
+<p>En este escrito se resolverá la ecuación del péndulo en cuatro casos:</p>
+<ol class="arabic simple">
+<li><p>Péndulo Simple con el método de Euler (es decir para <span class="math notranslate nohighlight">\(\theta \leq 15°\)</span>)</p></li>
+<li><p>Péndulo Simple con el método de Euler-Cromer (es decir para <span class="math notranslate nohighlight">\(\theta \leq 15°\)</span>)</p></li>
+<li><p>Péndulo con Fricción (para <span class="math notranslate nohighlight">\(\theta\)</span> grandes)</p></li>
+</ol>
+<section id="pendulo-simple-con-euler">
+<h2><strong>Péndulo Simple con Euler</strong><a class="headerlink" href="#pendulo-simple-con-euler" title="Permalink to this heading">#</a></h2>
+<p>Para este caso:</p>
+<div class="math notranslate nohighlight">
+\[\frac {d^2\theta}{dt^2} = \frac {-g}{l} \theta\]</div>
+<p>Numéricamente:</p>
+<div class="math notranslate nohighlight">
+\[\omega_{i+1} = \omega_{i} - Δt(\frac {g}{l} \theta_{i})\]</div>
+<div class="math notranslate nohighlight">
+\[\theta_{i+1} = \theta_{i} + \omega_{i} Δt \]</div>
+<p>Esto es:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">;</span> <span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">];</span> <span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+  <span class="n">w</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span><span class="o">/</span><span class="n">l</span> <span class="o">*</span> <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="n">theta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pendulum With No Drag Euler Method&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;theta&#39;)
+</pre></div>
+</div>
+<img alt="_images/f51958a914a329e8aeb4b51893d12d8e692a900fc9d07f34a732fa8d633411a7.png" src="_images/f51958a914a329e8aeb4b51893d12d8e692a900fc9d07f34a732fa8d633411a7.png" />
+</div>
+</div>
+</section>
+<section id="pendulo-simple-con-euler-cromer">
+<h2><strong>Péndulo Simple con Euler-Cromer</strong><a class="headerlink" href="#pendulo-simple-con-euler-cromer" title="Permalink to this heading">#</a></h2>
+<p>Tenemos el mismo caso anterior pero numéricamente es de la siguiente forma:</p>
+<div class="math notranslate nohighlight">
+\[\omega_{i+1} = \omega_{i} - Δt(\frac {g}{l} \theta)\]</div>
+<div class="math notranslate nohighlight">
+\[\theta_{i+1} = \theta_{i} + Δt (\omega_{i+1})\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span><span class="p">;</span> <span class="n">thetacromer</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">];</span> <span class="n">wcromer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+  <span class="n">wcromer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wcromer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">g</span><span class="o">/</span><span class="n">l</span> <span class="o">*</span> <span class="n">thetacromer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="n">thetacromer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thetacromer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">time</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">wcromer</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
-</section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">thetacromer</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Pendulum With No Drag Euler-Cromer&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;theta&#39;)
+</pre></div>
+</div>
+<img alt="_images/3ebc5290e9dc82b80348e568724c32e0b15af7e08b30480c9fb7de256c674adc.png" src="_images/3ebc5290e9dc82b80348e568724c32e0b15af7e08b30480c9fb7de256c674adc.png" />
+</div>
 </div>
 </section>
 </section>
@@ -457,22 +530,13 @@ See the YAML at the top of this page for example.</p></li>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks.html"
+       href="mymarkdownfile.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Content with notebooks</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="mymarkdownfile.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Here’s my sample title</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -489,9 +553,8 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-con-euler"><strong>Péndulo Simple con Euler</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendulo-simple-con-euler-cromer"><strong>Péndulo Simple con Euler-Cromer</strong></a></li>
 </ul>
   </nav></div>
 
